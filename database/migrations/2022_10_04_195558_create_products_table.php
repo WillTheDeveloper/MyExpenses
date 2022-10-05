@@ -23,6 +23,8 @@ return new class extends Migration
             $table->integer('supplier_id')->nullable(false);
             $table->date('ordered_on')->comment('The date the request was placed for the item');
             $table->date('delivered_on')->comment('The date that the item was in possession of its owner.');
+            $table->decimal('cost', 8, 2)->comment('Total price of the item')->nullable(false);
+            $table->decimal('shipping', 4, 2)->comment('Any shipping costs')->default(0);
             $table->timestamps();
         });
     }
