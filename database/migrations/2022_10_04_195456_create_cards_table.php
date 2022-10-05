@@ -14,7 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cards', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
+            $table->enum('type', ['credit', 'debit'])->nullable(false);
+            $table->integer('lastfour')->nullable(false);
+            $table->integer('user_id')->nullable(false);
             $table->timestamps();
         });
     }

@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->text('item')->nullable(false);
+            $table->text('details');
+            $table->integer('brand_id')->nullable(false);
+            $table->integer('card_id')->nullable(false);
+            $table->integer('category_id')->nullable(false);
+            $table->integer('supplier_id')->nullable(false);
             $table->timestamps();
         });
     }
