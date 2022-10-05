@@ -21,6 +21,8 @@ return new class extends Migration
             $table->integer('card_id')->nullable(false);
             $table->integer('category_id')->nullable(false);
             $table->integer('supplier_id')->nullable(false);
+            $table->date('ordered_on')->comment('The date the request was placed for the item');
+            $table->date('delivered_on')->comment('The date that the item was in possession of its owner.');
             $table->timestamps();
         });
     }
