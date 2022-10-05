@@ -35,4 +35,9 @@ class Product extends Model
     {
         return $this->belongsTo(Card::class);
     }
+
+    public function Subscription()
+    {
+        return $this->hasMany(Subscription::class);
+    }
 }

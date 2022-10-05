@@ -17,6 +17,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->text('item')->nullable(false);
             $table->text('details');
+            $table->integer('user_id')->nullable(false);
             $table->integer('brand_id')->nullable(false);
             $table->integer('card_id')->nullable(false);
             $table->integer('category_id')->nullable(false);
