@@ -22,4 +22,19 @@ class Product extends Controller
             'supplier' => \App\Models\Supplier::query()->get(),
         ]);
     }
+
+    public function create(Request $request)
+    {
+        \App\Models\Product::query()->create([
+            'item' => $request->input('item'),
+            'cost' => $request->input('cost'),
+            'details' => $request->input('details'),
+            'category_id' => $request->input('category'),
+            'brand_id' => $request->input('brand'),
+            'card_id' => $request->input('card'),
+            'supplier_id' => $request->input('supplier')
+        ]);
+
+        return redirect(route('products'));
+    }
 }
