@@ -50,10 +50,10 @@
                         </div>
 
                         <div class="px-4 py-5 sm:p-6">
-                            <dt class="text-base font-normal text-gray-900">Monthly change</dt>
+                            <dt class="text-base font-normal text-gray-900">Total year expense</dt>
                             <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
                                 <div class="flex items-baseline text-2xl font-semibold text-indigo-600">
-                                    {{$difference}}%
+                                    £{{$thisyear}}
                                     <span class="ml-2 text-sm font-medium text-gray-500">from 28.62%</span>
                                 </div>
 

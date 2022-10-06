@@ -18,17 +18,14 @@ class Dashboard extends Controller
             ->whereMonth('created_at', \Illuminate\Support\Carbon::now()->subMonth())
             ->whereYear('created_at', \Illuminate\Support\Carbon::now()->year)
             ->sum('cost');
-
-        if ($t == 0 or $l == 0){
-            $d = 0;
-        } else {
-            $d = ($l / $t) * 100;
-        }
+        $y = Product::query()
+            ->whereYear('created_at', \Illuminate\Support\Carbon::now()->year)
+            ->sum('cost');
 
         return view('dashboard', [
             'thismonth' => $t,
             'lastmonth' => $l,
-            'difference' => $d
+            'thisyear' => $y
         ]);
     }
 }
