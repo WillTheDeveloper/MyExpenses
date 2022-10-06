@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('earnings', function (Blueprint $table) {
             $table->id();
+            $table->text('from');
+            $table->uuid('card_id');
+            $table->date('paid');
+            $table->decimal('amount', 8, 2, true);
             $table->timestamps();
         });
     }
