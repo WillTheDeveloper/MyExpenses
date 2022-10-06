@@ -17,7 +17,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->enum('type', ['credit', 'debit'])->nullable(false);
             $table->integer('lastfour')->nullable(false);
-            $table->integer('user_id')->nullable(false);
+            $table->uuid('user_id')->nullable(false);
             $table->text('name');
             $table->timestamps();
         });
