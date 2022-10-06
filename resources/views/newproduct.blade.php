@@ -19,37 +19,37 @@
                             <div class="mt-5 md:col-span-2 md:mt-0">
                                 <div class="grid grid-cols-6 gap-6">
                                     <div class="col-span-6 sm:col-span-3">
-                                        <label for="first-name" class="block text-sm font-medium text-gray-700">Item name</label>
-                                        <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <label for="item" class="block text-sm font-medium text-gray-700">Item name</label>
+                                        <input type="text" name="item" id="item" autocomplete="given-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3">
-                                        <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
-                                        <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                        <label for="cost" class="block text-sm font-medium text-gray-700">Cost</label>
+                                        <input type="number" name="cost" id="cost" autocomplete="family-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-4">
-                                        <label for="email-address" class="block text-sm font-medium text-gray-700">Details</label>
-                                        <textarea type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></textarea>
+                                        <label for="details" class="block text-sm font-medium text-gray-700">Details</label>
+                                        <textarea type="text" name="details" id="details" autocomplete="details" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></textarea>
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3">
-                                        <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
-                                        <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
-                                            <option>United States</option>
-                                            <option>Canada</option>
-                                            <option>Mexico</option>
+                                        <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+                                        <select id="category" name="category" autocomplete="category" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                                            @foreach($category as $cc)
+                                                <option value="{{$cc->id}}">{{$cc->category}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
 
-                                    <div class="col-span-6">
+                                    {{--<div class="col-span-6">
                                         <label for="street-address" class="block text-sm font-medium text-gray-700">Street address</label>
                                         <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                                    </div>
+                                    </div>--}}
 
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                        <label for="city" class="block text-sm font-medium text-gray-700">Brand</label>
-                                        <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                                        <label for="brand" class="block text-sm font-medium text-gray-700">Brand</label>
+                                        <select id="brand" name="brand" autocomplete="brand" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                                             @foreach($brand as $b)
                                                 <option value="{{$b->id}}">{{$b->item}}</option>
                                             @endforeach
@@ -57,20 +57,20 @@
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="region" class="block text-sm font-medium text-gray-700">Card</label>
-                                        <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
-                                            <option>United States</option>
-                                            <option>Canada</option>
-                                            <option>Mexico</option>
+                                        <label for="card" class="block text-sm font-medium text-gray-700">Card</label>
+                                        <select id="card" name="card" autocomplete="card" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                                            @foreach($card as $c)
+                                                <option value="{{$c->id}}">{{$c->lastfour}} : {{$c->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                        <label for="postal-code" class="block text-sm font-medium text-gray-700">Supplier</label>
-                                        <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
-                                            <option>United States</option>
-                                            <option>Canada</option>
-                                            <option>Mexico</option>
+                                        <label for="supplier" class="block text-sm font-medium text-gray-700">Supplier</label>
+                                        <select id="supplier" name="supplier" autocomplete="supplier" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                                            @foreach($supplier as $s)
+                                                <option value="{{$s->id}}">{{$s->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
