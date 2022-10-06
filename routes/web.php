@@ -17,4 +17,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/cards', [\App\Http\Controllers\Card::class, 'view'])->name('cards');
 
     Route::get('/subscriptions', [\App\Http\Controllers\Subscription::class, 'view'])->name('subscriptions');
+
+    Route::get('/brands', [\App\Http\Controllers\Brand::class, 'view'])->name('brands');
+
+    Route::get('/categories', [\App\Http\Controllers\Category::class, 'view'])->name('categories');
+
+    Route::get('/supplier', [\App\Http\Controllers\Supplier::class, 'view'])->name('supplier');
 });
