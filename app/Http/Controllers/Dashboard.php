@@ -22,10 +22,19 @@ class Dashboard extends Controller
             ->whereYear('created_at', \Illuminate\Support\Carbon::now()->year)
             ->sum('cost');
 
+        if ($t == 0 or $l == 0)
+        {
+            $d = 0;
+        } else {
+            $z = ($l - $t) / $l;
+            $d = $z * 100;
+        }
+
         return view('dashboard', [
             'thismonth' => $t,
             'lastmonth' => $l,
-            'thisyear' => $y
+            'thisyear' => $y,
+            'difference' => $d
         ]);
     }
 }
