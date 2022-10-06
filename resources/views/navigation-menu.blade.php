@@ -21,11 +21,20 @@
                     <x-jet-nav-link href="{{ route('products') }}" :active="request()->routeIs('products')">
                         {{ __('Products') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('brands') }}" :active="request()->routeIs('brands')">
+                        {{ __('Brands') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('categories') }}" :active="request()->routeIs('categories')">
+                        {{ __('Category') }}
+                    </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('cards') }}" :active="request()->routeIs('cards')">
                         {{ __('Cards') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('subscriptions') }}" :active="request()->routeIs('subscriptions')">
                         {{ __('Subscriptions') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('supplier') }}" :active="request()->routeIs('supplier')">
+                        {{ __('Supplier') }}
                     </x-jet-nav-link>
                 </div>
             </div>
