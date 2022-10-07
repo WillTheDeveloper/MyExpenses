@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->text('from');
             $table->uuid('card_id');
+            $table->uuid('user_id');
             $table->date('paid');
             $table->decimal('amount', 8, 2, true);
             $table->timestamps();
