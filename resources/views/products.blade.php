@@ -39,14 +39,14 @@
                                         {{$l->item}}
                                         <dl class="font-normal lg:hidden">
                                             <dt class="sr-only">Item</dt>
-                                            <dd class="mt-1 truncate text-gray-700">Front-end Developer</dd>
-                                            <dt class="sr-only sm:hidden">Cost</dt>
-                                            <dd class="mt-1 truncate text-gray-500 sm:hidden">lindsay.walton@example.com</dd>
+                                            <dd class="mt-1 truncate text-gray-700">{{$l->Brand->name}}</dd>
+                                            <dt class="sr-only sm:hidden">£{{$l->cost}}</dt>
+                                            <dd class="mt-1 truncate text-gray-500 sm:hidden">{{$l->Supplier->name}}</dd>
                                         </dl>
                                     </td>
-                                    <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">Front-end Developer</td>
-                                    <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">lindsay.walton@example.com</td>
-                                    <td class="px-3 py-4 text-sm text-gray-500">Member</td>
+                                    <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{$l->Brand->name}}</td>
+                                    <td class="hidden px-3 py-4 text-sm text-gray-500 sm:table-cell">{{$l->Supplier->name}}</td>
+                                    <td class="px-3 py-4 text-sm text-gray-500">£{{$l->cost}}</td>
                                     <td class="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                         <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit<span class="sr-only">, Lindsay Walton</span></a>
                                     </td>
