@@ -43,9 +43,9 @@
                                         @foreach($monthly as $m)
                                             <tr class="border-t border-gray-300">
                                                 <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{$m->name}}</td>
-                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Front-end Developer</td>
-                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">lindsay.walton@example.com</td>
-                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Member</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$m->type->titleCase()}}</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">£{{$m->cost}}</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$m->active ? 1 : 'Active' ?? 'Inactive'}}</td>
                                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                                     <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit<span class="sr-only">, Lindsay Walton</span></a>
                                                 </td>
@@ -58,10 +58,10 @@
 
                                         @foreach($yearly as $y)
                                             <tr class="border-t border-gray-200">
-                                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Courtney Henry</td>
-                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Designer</td>
-                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">courtney.henry@example.com</td>
-                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Admin</td>
+                                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{$m->name}}</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$m->type->titleCase()}}</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">£{{$m->cost}}</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$m->active ? 1 : 'Active' ?? 'Inactive'}}</td>
                                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                                     <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit<span class="sr-only">, Courtney Henry</span></a>
                                                 </td>
