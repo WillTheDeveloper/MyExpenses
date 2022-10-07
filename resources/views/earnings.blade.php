@@ -24,16 +24,16 @@
                             <dt class="text-base font-normal text-gray-900">Currently earned</dt>
                             <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
                                 <div class="flex items-baseline text-2xl font-semibold text-indigo-600">
-                                    £6000
+                                    £{{$earned}}
                                 </div>
                             </dd>
                         </div>
 
                         <div class="px-4 py-5 sm:p-6">
-                            <dt class="text-base font-normal text-gray-900">Earnings spent</dt>
+                            <dt class="text-base font-normal text-gray-900">Monthly average</dt>
                             <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
                                 <div class="flex items-baseline text-2xl font-semibold text-indigo-600">
-                                    £250
+                                    £{{$average}}
                                 </div>
                             </dd>
                         </div>
@@ -63,7 +63,7 @@
                                         @foreach($list as $l)
                                             <tr>
                                                 <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{$l->from}}</td>
-                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$l->Card->name}}</td>
+                                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$l->Card->name}} ({{$l->Card->lastfour}})</td>
                                                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{$l->paid->diffForHumans()}}</td>
                                                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">£{{$l->amount}}</td>
                                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">

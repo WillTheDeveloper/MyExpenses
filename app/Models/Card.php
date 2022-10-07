@@ -10,4 +10,9 @@ class Card extends Model
 {
     use HasFactory;
     use HasUuids;
+
+    public function User()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

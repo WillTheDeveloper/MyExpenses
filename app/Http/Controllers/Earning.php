@@ -11,9 +11,17 @@ class Earning extends Controller
     {
         return view('earnings', [
             'list' => \App\Models\Earning::query()
-                ->whereYear('created_at', Carbon::now()->year)
+                ->whereYear('paid', Carbon::now()->year)
                 ->where('user_id', auth()->id())
-                ->paginate(12)
+                ->paginate(12),
+            'earned' => \App\Models\Earning::query()
+                ->whereYear('paid', Carbon::now()->year)
+                ->where('user_id', auth()->id())
+                ->sum('amount'),
+            'average' => \App\Models\Earning::query()
+                ->whereYear('paid', Carbon::now()->year)
+                ->where('user_id', auth()->id())
+                ->average('amount')
         ]);
     }
 }
