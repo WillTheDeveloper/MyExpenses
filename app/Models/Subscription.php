@@ -10,4 +10,14 @@ class Subscription extends Model
 {
     use HasFactory;
     use HasUuids;
+
+    public function User()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function Card()
+    {
+        return $this->belongsTo(Card::class);
+    }
 }
