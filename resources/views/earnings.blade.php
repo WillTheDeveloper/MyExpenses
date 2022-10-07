@@ -33,7 +33,7 @@
                             <dt class="text-base font-normal text-gray-900">Monthly average</dt>
                             <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
                                 <div class="flex items-baseline text-2xl font-semibold text-indigo-600">
-                                    £{{$average}}
+                                    £{{round($average, 2)}}
                                 </div>
                             </dd>
                         </div>
