@@ -25,9 +25,14 @@ class Dashboard extends Controller
         if ($t == 0 or $l == 0)
         {
             $d = 0;
-        } else {
+        } else if ($t < $l){
             $z = ($l - $t) / $l;
             $d = $z * 100;
+        } else if ($t > $l){
+            $z = ($l / $t);
+            $d = $z * 100;
+        } else {
+            $d = 0;
         }
 
         return view('dashboard', [
