@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('details');
             $table->uuid('user_id')->nullable(false);
             $table->integer('brand_id')->nullable(false);
-            $table->integer('card_id')->nullable(false);
+            $table->uuid('card_id')->nullable(false);
             $table->integer('category_id')->nullable(false);
             $table->integer('supplier_id')->nullable(false);
             $table->date('ordered_on')->comment('The date the request was placed for the item');
