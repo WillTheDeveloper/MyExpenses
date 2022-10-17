@@ -9,7 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="overflow-hidden sm:rounded-lg">
 
-                <form class="space-y-6" action="#" method="POST">
+                <form class="space-y-6" action="{{route('product.create')}}" method="POST">
+                    @csrf
                     <div class="bg-white px-4 py-5 shadow sm:rounded-lg sm:p-6">
                         <div class="md:grid md:grid-cols-3 md:gap-6">
                             <div class="md:col-span-1">

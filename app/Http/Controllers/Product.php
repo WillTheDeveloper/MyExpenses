@@ -32,7 +32,8 @@ class Product extends Controller
             'category_id' => $request->input('category'),
             'brand_id' => $request->input('brand'),
             'card_id' => $request->input('card'),
-            'supplier_id' => $request->input('supplier')
+            'supplier_id' => $request->input('supplier'),
+            'user_id' => $request->user()->id
         ]);
 
         return redirect(route('products'));
