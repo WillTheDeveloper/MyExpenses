@@ -51,7 +51,7 @@
                                         <label for="brand" class="block text-sm font-medium text-gray-700">Brand</label>
                                         <select id="brand" name="brand" autocomplete="brand" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                                             @foreach($brand as $b)
-                                                <option value="{{$b->id}}">{{$b->item}}</option>
+                                                <option value="{{$b->id}}">{{$b->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
