@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'category' => $this->faker->bloodType(),
+            'user_id' => User::query()->get('id')->random()
         ];
     }
 }
