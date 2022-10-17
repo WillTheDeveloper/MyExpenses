@@ -15,7 +15,7 @@
                             <dt class="text-base font-normal text-gray-900">Expected salary</dt>
                             <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
                                 <div class="flex items-baseline text-2xl font-semibold text-indigo-600">
-                                    £20,000
+                                    £72,000
                                 </div>
                             </dd>
                         </div>
