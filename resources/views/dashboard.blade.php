@@ -70,6 +70,11 @@
                     </dl>
                 </div>
 
+
+                @foreach($chart as $c)
+                    {{$c}}
+                @endforeach
+
                         <div class="flex flex-1 flex-col p-8">
 
                             <div>
@@ -79,7 +84,7 @@
                             <script>
                                 const labels1 = [
                                     @foreach($chart as $c)
-                                            '{{\Carbon\Carbon::parse($c->created_at)->monthName}}',
+                                            '{{\Carbon\Carbon::parse($c->ordered_on)->monthName}}',
                                     @endforeach
                                 ];
 
@@ -91,10 +96,23 @@
                                         borderColor: 'rgb(255, 99, 132)',
                                         data: [
                                             @foreach($chart as $c)
-                                                {{$c->sum('cost')}},
+                                                {{$c->where('user_id', auth()->id())->sum('cost')}},
                                             @endforeach
                                         ],
-                                    }]
+
+                                    },
+                                        {
+                                            label: 'Shipping costs',
+                                            backgroundColor: 'rgb(255,0,55)',
+                                            borderColor: 'rgb(255,0,55)',
+                                            data: [
+                                                @foreach($chart as $c)
+                                                        {{$c->where('user_id', auth()->id())->sum('shipping')}},
+                                                @endforeach
+                                            ],
+
+                                        }
+                                    ]
                                 };
 
                                 const config1 = {

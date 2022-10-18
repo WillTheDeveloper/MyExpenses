@@ -27,7 +27,7 @@ class Dashboard extends Controller
             ->sum('cost');
 
         $c = Product::query()
-            ->groupBy(['ordered_on', 'id'])
+            ->groupBy(['ordered_on', 'user_id', 'id'])
             ->where('user_id', auth()->id())
             ->get()->collect();
 
