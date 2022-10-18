@@ -2,6 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Card;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +20,11 @@ class EarningFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'from' => $this->faker->company,
+            'card_id' => Card::query()->get('id')->random(),
+            'user_id' => User::query()->get('id')->random(),
+            'paid'=> Carbon::now()->toDate(),
+            'amount' => $this->faker->numberBetween('100', '2222')
         ];
     }
 }
