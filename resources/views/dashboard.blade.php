@@ -72,6 +72,52 @@
 
 
 
+                        <div class="flex flex-1 flex-col p-8">
+
+                            <div>
+                                <canvas id="chart01"></canvas>
+                            </div>
+
+                            <script>
+                                const labels1 = [
+                                    'January',
+                                    'February',
+                                    'March',
+                                    'April',
+                                    'May',
+                                    'June',
+                                    'July',
+                                    'August',
+                                    'September',
+                                    'October',
+                                    'November',
+                                    'December'
+                                ];
+
+                                const data1 = {
+                                    labels: labels1,
+                                    datasets: [{
+                                        label: 'Some maths',
+                                        backgroundColor: 'rgb(255, 99, 132)',
+                                        borderColor: 'rgb(255, 99, 132)',
+                                        data: [0, 10, 5, 2, 20, 30, 45],
+                                    }]
+                                };
+
+                                const config1 = {
+                                    type: 'line',
+                                    data: data1,
+                                    options: {}
+                                };
+                            </script>
+
+                            <script>
+                                const myChart1 = new Chart(
+                                    document.getElementById('chart01'),
+                                    config1
+                                );
+                            </script>
+                        </div>
             </div>
         </div>
     </div>
