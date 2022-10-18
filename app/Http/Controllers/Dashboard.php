@@ -26,6 +26,11 @@ class Dashboard extends Controller
             ->whereYear('created_at', \Illuminate\Support\Carbon::now()->year)
             ->sum('cost');
 
+        $c = Product::query()
+            ->groupBy(['ordered_on', 'id'])
+            ->where('user_id', auth()->id())
+            ->get()->collect();
+
         if ($t == 0 or $l == 0)
         {
             $d = 0;
@@ -44,6 +49,7 @@ class Dashboard extends Controller
             'lastmonth' => $l,
             'thisyear' => $y,
             'difference' => $d,
+            'chart' => $c,
         ]);
     }
 }

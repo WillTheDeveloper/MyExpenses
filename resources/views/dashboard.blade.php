@@ -70,8 +70,6 @@
                     </dl>
                 </div>
 
-
-
                         <div class="flex flex-1 flex-col p-8">
 
                             <div>
@@ -80,27 +78,22 @@
 
                             <script>
                                 const labels1 = [
-                                    'January',
-                                    'February',
-                                    'March',
-                                    'April',
-                                    'May',
-                                    'June',
-                                    'July',
-                                    'August',
-                                    'September',
-                                    'October',
-                                    'November',
-                                    'December'
+                                    @foreach($chart as $c)
+                                            '{{\Carbon\Carbon::parse($c->created_at)->monthName}}',
+                                    @endforeach
                                 ];
 
                                 const data1 = {
                                     labels: labels1,
                                     datasets: [{
-                                        label: 'Some maths',
+                                        label: 'Monthly expenditure',
                                         backgroundColor: 'rgb(255, 99, 132)',
                                         borderColor: 'rgb(255, 99, 132)',
-                                        data: [0, 10, 5, 2, 20, 30, 45],
+                                        data: [
+                                            @foreach($chart as $c)
+                                                {{$c->sum('cost')}},
+                                            @endforeach
+                                        ],
                                     }]
                                 };
 
