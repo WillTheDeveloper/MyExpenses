@@ -14,6 +14,7 @@ return new class extends Migration
             $table->integer('lastfour')->nullable(false);
             $table->uuid('user_id')->nullable(false);
             $table->text('name');
+            $table->string('bank');
             $table->timestamps();
         });
     }

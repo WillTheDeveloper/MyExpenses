@@ -24,4 +24,9 @@ class Earning extends Controller
                 ->average('amount')
         ]);
     }
+
+    public function add()
+    {
+        return view('addearnings');
+    }
 }

@@ -5,9 +5,13 @@
         </h2>
     </x-slot>
 
-    <div class="pt-12">
+    <div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class=" overflow-hidden sm:rounded-lg">
+
+                <div class="py-2">
+                    <a href="{{route('earning.add')}}" class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add earnings</a>
+                </div>
 
                 <div>
                     <dl class="grid grid-cols-1 divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow md:grid-cols-3 md:divide-y-0 md:divide-x">
